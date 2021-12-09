@@ -7,7 +7,7 @@ Enjoy!
 
 # Error and work around
 
-A CORS error is being thrown at start which I bypassed by install a CORS always enabled Plugin.
+A CORS error is being thrown at start which I bypassed by installing a "CORS always enabled" Plugin.
 
 # Getting Started with Create React App
 
