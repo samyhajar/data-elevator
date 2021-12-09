@@ -35,7 +35,7 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker position={[latitude, longitude]}>
-          <Popup>Elevation :{elevation} meters</Popup>
+          <Popup>Elevation : {elevation} meters</Popup>
         </Marker>
       </MapContainer>
       <div>
