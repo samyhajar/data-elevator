@@ -1,3 +1,12 @@
+# Data Elevator 
+
+This project allows you to insert coordinates of a place and will show you the elevation of it in meters.
+The marker will also show you the place/city you manually entered on the map. 
+
+Enjoy! 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
