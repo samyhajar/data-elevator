@@ -1,5 +1,4 @@
 import './App.css';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Input from '@mui/material/Input';
 import { useEffect, useState } from 'react';
@@ -37,9 +36,7 @@ function App() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker position={[latitude, longitude]}>
-          <Popup>
-            The elevation of the coordinates is : {elevation} meters
-          </Popup>
+          <Popup>Elevation :{elevation} meters</Popup>
         </Marker>
       </MapContainer>
       <div>
@@ -66,7 +63,7 @@ function App() {
             Submit
           </Button>
         </form>
-        <div>The elevation is {elevation} meters</div>
+        <div className="elevate">Elevation : {elevation} meters</div>
       </div>
     </div>
   );

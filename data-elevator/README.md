@@ -1,23 +1,13 @@
-# Data Elevator 
+# Data Elevator
 
 This project allows you to insert coordinates of a place and will show you the elevation of it in meters.
-The marker will also show you the place/city you manually entered on the map. 
+The marker will also show you the place/city you manually entered on the map.
 
-The project has been tested on some cities: 
-
-Rome,
-Vienna, 
-Prague,
-London,
-Amsterdam,
-etc.
-
-Though, some of them like madrid wouldn't appear on the right location on the map.
+Enjoy!
 
 # Error and work around
 
 A CORS error is being thrown at start which I bypassed by install a CORS always enabled Plugin.
-
 
 # Getting Started with Create React App
 

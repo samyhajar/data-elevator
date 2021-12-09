@@ -20,6 +20,12 @@ h1 {
 .label {
   margin-left: 40px;
 }
+
+.elevate {
+  margin-left: 40%;
+  margin-top: 40px;
+  font-size: xx-large;
+}
 .App {
   text-align: center;
 }
