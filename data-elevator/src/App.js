@@ -1,4 +1,7 @@
 import './App.css';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Input from '@mui/material/Input';
 import { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
@@ -27,35 +30,44 @@ function App() {
   };
   return (
     <div>
+      <h1>Data Elevator </h1>
       <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker position={[latitude, longitude]}>
-          <Popup>The elevation of the coordinates is : {elevation}</Popup>
+          <Popup>
+            The elevation of the coordinates is : {elevation} meters
+          </Popup>
         </Marker>
       </MapContainer>
-      <form></form>
-      <form onSubmit={fetchData}>
-        <label htmlFor="Latitude">Latitude</label>
-        <input
-          type="number"
-          name="Latitude"
-          value={latitude}
-          onChange={(e) => setLatitude(e.target.value)}
-        />
-        <label htmlFor="Longitude">Longitude</label>
-        <input
-          type="number"
-          name="Longitude"
-          value={longitude}
-          onChange={(e) => setLongitude(e.target.value)}
-        />
-        <input type="submit" value="Submit" />
-      </form>
-
-      <div>The elevation is {elevation} meters</div>
+      <div>
+        <form onSubmit={fetchData} className="input-text">
+          <label className="label" htmlFor="Latitude">
+            Latitude :
+          </label>
+          <Input
+            className="input"
+            type="number"
+            name="Latitude"
+            value={latitude}
+            onChange={(e) => setLatitude(e.target.value)}
+          />
+          <label htmlFor="Longitude">Longitude : </label>
+          <Input
+            className="input"
+            type="number"
+            name="Longitude"
+            value={longitude}
+            onChange={(e) => setLongitude(e.target.value)}
+          />
+          <Button className="sendForm" type="submit" value="Submit">
+            Submit
+          </Button>
+        </form>
+        <div>The elevation is {elevation} meters</div>
+      </div>
     </div>
   );
 }
