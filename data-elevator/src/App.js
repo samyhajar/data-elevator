@@ -4,39 +4,27 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
 function App() {
   const [elevation, setElevation] = useState();
-  const [latitude, setLatitude] = useState();
-  const [longitude, setLongitude] = useState();
-  const [changedLatitude, setChangedLatitude] = useState(45.764);
-  const [changedLongitude, setChangedLongitude] = useState(4.8357);
-
-  const handleSubmitLatitude = (evt) => {
-    evt.preventDefault();
-    setChangedLatitude(latitude);
-  };
-  console.log(latitude);
-
-  const handleSubmitLongitude = (evt) => {
-    evt.preventDefault();
-    setChangedLongitude(longitude);
-  };
+  const [latitude, setLatitude] = useState(45.764);
+  const [longitude, setLongitude] = useState(4.8357);
 
   useEffect(() => {
-    const url = `https://api.opentopodata.org/v1/srtm30m?locations=${changedLatitude},${changedLongitude}`;
-
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const json = await response.json();
-        console.log(json.results[0].elevation);
-        setElevation(json.results[0].elevation);
-      } catch (error) {
-        console.log('error', error);
-      }
-    };
-
     fetchData();
-  }, [changedLatitude, changedLongitude]);
+  });
 
+  const fetchData = async (e) => {
+    if (e) {
+      e.preventDefault();
+    }
+    const url = `https://api.opentopodata.org/v1/srtm30m?locations=${latitude},${longitude}`;
+    try {
+      const response = await fetch(url);
+      const json = await response.json();
+      console.log(json.results[0].elevation);
+      setElevation(json.results[0].elevation);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
   return (
     <div>
       <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
@@ -44,12 +32,12 @@ function App() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[changedLatitude, changedLongitude]}>
+        <Marker position={[latitude, longitude]}>
           <Popup>Hello</Popup>
         </Marker>
       </MapContainer>
       <form></form>
-      <form onSubmit={(handleSubmitLatitude, handleSubmitLongitude)}>
+      <form onSubmit={fetchData}>
         <label htmlFor="Latitude">Latitude</label>
         <input
           type="number"
