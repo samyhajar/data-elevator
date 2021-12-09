@@ -6,21 +6,22 @@ function App() {
   const [elevation, setElevation] = useState();
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
+  const [changedLatitude, setChangedLatitude] = useState(45.764);
+  const [changedLongitude, setChangedLongitude] = useState(4.8357);
 
   const handleSubmitLatitude = (evt) => {
     evt.preventDefault();
-    setLatitude(`${latitude}`);
+    setChangedLatitude(latitude);
   };
   console.log(latitude);
 
   const handleSubmitLongitude = (evt) => {
     evt.preventDefault();
-    setLongitude(`${longitude}`);
+    setChangedLongitude(longitude);
   };
 
   useEffect(() => {
-    const url =
-      `https://api.opentopodata.org/v1/srtm30m?locations=``${latitude}`,`${longitude}``;
+    const url = `https://api.opentopodata.org/v1/srtm30m?locations=${changedLatitude},${changedLongitude}`;
 
     const fetchData = async () => {
       try {
@@ -34,7 +35,7 @@ function App() {
     };
 
     fetchData();
-  }, [latitude, longitude]);
+  }, [changedLatitude, changedLongitude]);
 
   return (
     <div>
@@ -43,7 +44,7 @@ function App() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[49.505, -0.09]}>
+        <Marker position={[changedLatitude, changedLongitude]}>
           <Popup>Hello</Popup>
         </Marker>
       </MapContainer>
