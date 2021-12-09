@@ -59,9 +59,6 @@ function App() {
             value={longitude}
             onChange={(e) => setLongitude(e.target.value)}
           />
-          <Button className="sendForm" type="submit" value="Submit">
-            Submit
-          </Button>
         </form>
         <div className="elevate">Elevation : {elevation} meters</div>
       </div>
