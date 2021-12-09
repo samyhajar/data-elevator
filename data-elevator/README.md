@@ -1,7 +1,7 @@
 # Data Elevator
 
 This project allows you to insert coordinates of a place and will show you the elevation of it in meters.
-The marker will also show you the place/city you manually entered on the map.
+The marker will also show you the place/city you manually entered on the map if you click on it.
 
 Enjoy!
 
