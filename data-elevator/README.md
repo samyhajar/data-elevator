@@ -9,6 +9,18 @@ Enjoy!
 # Error and work around
 
 A CORS error is being thrown at start which I bypassed by installing a "CORS always enabled" Plugin.
+Second way would be to configure the config.yaml file which I couldn't find and replace "access_control_allow_origin: 'null' to "access_control_allow_origin: '*'".
+
+# Examples
+
+Vienna:
+<img width="1680" alt="Screenshot 2021-12-10 at 10 12 14" src="https://user-images.githubusercontent.com/51134630/145548698-73707975-1902-4c34-813d-5b93a2695419.png">
+
+Lyon:
+
+<img width="1652" alt="Screenshot 2021-12-10 at 10 15 04" src="https://user-images.githubusercontent.com/51134630/145548875-f7f84d8a-65a6-4349-8090-3a69a41f8540.png">
+
+
 
 # Getting Started with Create React App
 
