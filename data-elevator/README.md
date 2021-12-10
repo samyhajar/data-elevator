@@ -9,6 +9,7 @@ Enjoy!
 # Error and work around
 
 A CORS error is being thrown at start which I bypassed by installing a "CORS always enabled" Plugin.
+(The paid version of the API has the right headers set to allow CORS)
 Second way would be to configure the config.yaml file (express server) and replace "access_control_allow_origin: 'null' to "access_control_allow_origin: '*'".
 
 # Examples
