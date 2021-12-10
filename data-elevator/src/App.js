@@ -16,7 +16,8 @@ function App() {
     if (e) {
       e.preventDefault();
     }
-    const url = `https://api.opentopodata.org/v1/srtm30m?locations=${latitude},${longitude}`;
+    const url = `https://api.opentopodata.org/v1/srtm90m?locations=${latitude},${longitude}`;
+
     try {
       const response = await fetch(url);
       const json = await response.json();
